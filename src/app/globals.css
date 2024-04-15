@@ -16,9 +16,14 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgb(255, 255, 255);
 }
+
 ::-webkit-scrollbar {
   width: 0%;
 }

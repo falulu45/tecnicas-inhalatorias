@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <head>
-        <link rel="shortcut icon" href="./logo-cpa.png" sizes="32x32" />
+        <link rel="shortcut icon" href="https://falulu45.github.io/tecnicas-inhalatorias/logo-cpa.png" sizes="32x32" />
       </head>
       <body className={inter.className}>
         <Providers>

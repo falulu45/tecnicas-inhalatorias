@@ -9,17 +9,10 @@ export function Providers({children}: { children: React.ReactNode }) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
-      ];
+        "Inicio",
+        "Importancia",
+        "Instrucciones"
+    ];
       
   return (
     
@@ -27,7 +20,7 @@ export function Providers({children}: { children: React.ReactNode }) {
         <Navbar onMenuOpenChange={setIsMenuOpen} className='h-[100px]' isBordered={true}>
         <NavbarContent>
           <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMenuOpen ? "Cerrar menu" : "Abrir Menu"}
             className="sm:hidden"
           />
         </NavbarContent>
@@ -35,17 +28,17 @@ export function Providers({children}: { children: React.ReactNode }) {
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem>
             <Link color="foreground" href="#">
-              Features
+              Inicio
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
             <Link href="#" aria-current="page">
-              Customers
+              Importancia
             </Link>
           </NavbarItem>
           <NavbarItem>
             <Link color="foreground" href="#">
-              Integrations
+              Intrucciones
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -53,29 +46,27 @@ export function Providers({children}: { children: React.ReactNode }) {
             <NavbarItem className=''>
             <NavbarBrand>
                 <Image 
-                    src='/logo-cpa.png'
+                    src='https://falulu45.github.io/tecnicas-inhalatorias/logo-cpa.png'
                     alt='Logo Cesfam Pampa Alegre Osorno'
                     className='w-[60px] h-[60px]'
                 />
             </NavbarBrand>
             </NavbarItem>
         </NavbarContent>
-        <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+        <NavbarMenu className=' pt-[40px]' id='navbar-unique'>
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={index}>
+              <Link
+                color={"foreground"}
+                className="w-full"
+                href={`#${item.toLowerCase()}`}
+                size="lg"
+              >
+                {item}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
     </Navbar>
       {children}
     </NextUIProvider>
